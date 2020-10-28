@@ -1,4 +1,4 @@
 module.exports = {
     /* config options here */
-    distDir: '../dist/base',
+    distDir: '../../dist/app1/list',
 }

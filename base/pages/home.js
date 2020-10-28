@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>/home in app2</div>
+  return <div>/home in base</div>
 }

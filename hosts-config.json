@@ -1,0 +1,10 @@
+{
+    "dev.app1.com": {
+        "template": "app1",
+        "apiHost": "api.app1.com"
+    },
+    "dev.app2.com": {
+        "template": "app2",
+        "apiHost": "api.app2.com"
+    }
+}
