@@ -6,7 +6,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({dev})
+const app = next({dev}); // app为 next-vv\dist\next-server\server\next-server.js 的一个实例
 
 const PROJECT_ROOT = process.cwd();
 
@@ -20,8 +20,9 @@ app.prepare().then(() => {
         const host = req.headers.host;
         const hostsConfig = JSON.parse(fs.readFileSync(path.resolve(PROJECT_ROOT, 'hosts-config.json'), 'utf-8'));
         if (hostsConfig[host]) {
-            const distDir = `./dist/${hostsConfig[host].template}${pathname}`;
+            query.__appDistDir = `./${hostsConfig[host].template}${pathname}`;
         } else {
+            query.__appDistDir = './base';
             res.end(`${host} has not configured`);
         }
 
